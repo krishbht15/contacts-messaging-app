@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Kisan Network Task</string>
+    <string name="tab_text_1">All Contacts</string>
+    <string name="tab_text_2">Sent Messages</string>
+</resources>

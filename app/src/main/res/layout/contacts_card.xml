@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/dimen_10dp"
+    android:layout_marginBottom="@dimen/dimen_8dp"
+android:background="@drawable/contact_common_background"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="First Name"
+        android:id="@+id/firstNameText"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="First Name"
+        android:id="@+id/firstNameTextAnswer"
+
+       android:layout_below="@id/firstNameText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last Name"
+        android:layout_marginRight="200dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/lastNameText"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last Name"
+        android:layout_marginRight="200dp"
+
+        android:id="@+id/lastNameTextAnswer"
+android:layout_alignParentRight="true"
+        android:layout_below="@id/lastNameText" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+917838238498"
+        android:id="@+id/contactNumber"
+        android:layout_below="@id/firstNameTextAnswer"/>
+
+<ImageView
+    android:layout_width="@dimen/dimen_40dp"
+    android:layout_height="@dimen/dimen_40dp"
+    android:id="@+id/msgSent"
+    android:layout_alignParentRight="true"
+    android:src="@drawable/ic_msg_sent"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<resources>
+	<dimen name="activity_vertical_margin">13.6dp</dimen>
+	<dimen name="activity_horizontal_margin">13.6dp</dimen>
+	<dimen name="fab_margin">13.6dp</dimen>
+	<dimen name="dimen_8dp">6.8dp</dimen>
+	<dimen name="appbar_padding">13.6dp</dimen>
+	<dimen name="appbar_padding_top">6.8dp</dimen>
+</resources>
