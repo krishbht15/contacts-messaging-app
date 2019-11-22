@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    tools:context=".OtpSendActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colord1e0e0"
+   >
+
+    <TextView
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:text="Send To"
+        android:id="@+id/sendToText"
+        android:textSize="@dimen/dimen_24sp"
+        android:fontFamily="@font/roboto_condensed_bold"
+        android:layout_marginLeft="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_16dp"/>
+    <TextView
+        android:layout_below="@id/sendToText"
+        android:background="@drawable/cancel_button"
+        android:text="+917838238498"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:layout_marginRight="@dimen/dimen_16dp"
+        android:textColor="@color/color15335d"
+        android:fontFamily="@font/roboto_condensed_bold"
+        android:paddingLeft="@dimen/dimen_8dp"
+        android:paddingTop="@dimen/dimen_8dp"
+        android:paddingBottom="@dimen/dimen_8dp"
+        android:id="@+id/phoneNumber"
+        android:textSize="@dimen/dimen_24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_16dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phoneNumber"
+        android:text="Your Text:"
+        android:id="@+id/yourText"
+        android:textSize="@dimen/dimen_24sp"
+        android:layout_marginLeft="@dimen/dimen_16dp"
+        android:textColor="@color/color15335d"
+        android:fontFamily="@font/roboto_condensed_bold"
+        android:layout_marginTop="@dimen/dimen_40dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_200dp"
+        android:background="@drawable/cancel_button"
+        android:layout_below="@id/yourText"
+        android:id="@+id/yourTextAnswer"
+        android:paddingLeft="@dimen/dimen_8dp"
+        android:paddingTop="@dimen/dimen_8dp"
+        android:layout_marginLeft="@dimen/dimen_16dp"
+        android:layout_marginRight="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_16dp"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Message"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/common_button"
+        android:textColor="#fff"
+        android:id="@+id/sendMessage"
+        android:layout_marginBottom="@dimen/dimen_40dp"
+        android:layout_marginLeft="@dimen/dimen_24dp"
+        android:layout_marginRight="@dimen/dimen_24dp"
+        android:fontFamily="@font/roboto_condensed_bold"
+        android:textSize="@dimen/dimen_24sp"
+        />
+</RelativeLayout>
+</layout>

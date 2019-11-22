@@ -11,6 +11,7 @@ public class ContactPojo implements Serializable {
 
     @NonNull
     @PrimaryKey
+
     private String firstName;
 
     private String lastName;

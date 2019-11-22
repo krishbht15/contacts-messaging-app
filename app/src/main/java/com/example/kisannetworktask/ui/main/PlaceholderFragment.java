@@ -53,7 +53,7 @@ public class PlaceholderFragment extends Fragment {
         int index = 1;
         linearLayoutManager=new LinearLayoutManager(getContext());
         list=new ArrayList<>();
-        contactsCommonAdapter=new ContactsCommonAdapter(list);
+        contactsCommonAdapter=new ContactsCommonAdapter(list,1);
         if (getArguments() != null) {
             index = getArguments().getInt(ARG_SECTION_NUMBER);
         }
