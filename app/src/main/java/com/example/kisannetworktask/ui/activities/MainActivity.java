@@ -1,13 +1,13 @@
-package com.example.kisannetworktask;
+package com.example.kisannetworktask.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.kisannetworktask.Constants;
+import com.example.kisannetworktask.R;
 import com.example.kisannetworktask.pojo.ContactPojo;
 import com.example.kisannetworktask.pojo.SentSmsPojo;
 import com.example.kisannetworktask.viewModels.MainActivityViewModel;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.annotation.Nullable;
@@ -15,14 +15,10 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.provider.ContactsContract;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
-import com.example.kisannetworktask.ui.main.SectionsPagerAdapter;
+import com.example.kisannetworktask.adapters.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
     private static final int ADD_NOTE_REQUEST = 1;

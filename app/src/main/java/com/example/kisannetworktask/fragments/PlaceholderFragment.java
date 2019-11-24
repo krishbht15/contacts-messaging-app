@@ -1,4 +1,4 @@
-package com.example.kisannetworktask.ui.main;
+package com.example.kisannetworktask.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,9 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -17,11 +15,12 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.kisannetworktask.AddContactActivity;
+import com.example.kisannetworktask.ui.activities.AddContactActivity;
 import com.example.kisannetworktask.R;
 import com.example.kisannetworktask.adapters.ContactsCommonAdapter;
 import com.example.kisannetworktask.pojo.ContactPojo;
 import com.example.kisannetworktask.pojo.SentSmsPojo;
+import com.example.kisannetworktask.viewModels.PageViewModel;
 
 import java.util.ArrayList;
 import java.util.List;

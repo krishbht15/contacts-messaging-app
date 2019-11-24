@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kisannetworktask.Constants;
-import com.example.kisannetworktask.OtpSendActivity;
+import com.example.kisannetworktask.ui.activities.OtpSendActivity;
 import com.example.kisannetworktask.R;
 import com.example.kisannetworktask.pojo.ContactPojo;
 import com.example.kisannetworktask.pojo.SentSmsPojo;

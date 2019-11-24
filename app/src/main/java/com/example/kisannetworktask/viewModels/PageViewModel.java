@@ -1,4 +1,4 @@
-package com.example.kisannetworktask.ui.main;
+package com.example.kisannetworktask.viewModels;
 
 import android.app.Application;
 

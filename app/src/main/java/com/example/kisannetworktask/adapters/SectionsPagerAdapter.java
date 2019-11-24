@@ -1,4 +1,4 @@
-package com.example.kisannetworktask.ui.main;
+package com.example.kisannetworktask.adapters;
 
 import android.content.Context;
 
@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.kisannetworktask.R;
+import com.example.kisannetworktask.fragments.PlaceholderFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to

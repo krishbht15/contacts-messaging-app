@@ -5,8 +5,8 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.kisannetworktask.pojo.ContactDao;
-import com.example.kisannetworktask.pojo.ContactDatabase;
+import com.example.kisannetworktask.dao.ContactDao;
+import com.example.kisannetworktask.dao.ContactDatabase;
 import com.example.kisannetworktask.pojo.ContactPojo;
 
 import java.util.List;

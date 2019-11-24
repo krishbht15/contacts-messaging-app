@@ -1,4 +1,4 @@
-package com.example.kisannetworktask.pojo;
+package com.example.kisannetworktask.dao;
 
 import android.content.Context;
 
@@ -6,7 +6,10 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {ContactPojo.class,SentSmsPojo.class}, version = 1,exportSchema = false)
+import com.example.kisannetworktask.pojo.ContactPojo;
+import com.example.kisannetworktask.pojo.SentSmsPojo;
+
+@Database(entities = {ContactPojo.class, SentSmsPojo.class}, version = 1,exportSchema = false)
 public abstract class ContactDatabase extends RoomDatabase {
     private static ContactDatabase instance;
 

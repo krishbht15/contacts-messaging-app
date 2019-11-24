@@ -1,9 +1,11 @@
-package com.example.kisannetworktask.pojo;
+package com.example.kisannetworktask.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+
+import com.example.kisannetworktask.pojo.ContactPojo;
 
 import java.util.List;
 @Dao

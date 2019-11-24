@@ -13,10 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OtpSendActivity"></activity>
-        <activity android:name=".AddContactActivity" />
+        <activity android:name=".ui.activities.OtpSendActivity"></activity>
+        <activity android:name=".ui.activities.AddContactActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

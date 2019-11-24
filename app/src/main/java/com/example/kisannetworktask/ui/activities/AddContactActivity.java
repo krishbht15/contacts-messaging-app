@@ -1,9 +1,8 @@
-package com.example.kisannetworktask;
+package com.example.kisannetworktask.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
@@ -12,11 +11,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.kisannetworktask.Constants;
+import com.example.kisannetworktask.R;
 import com.example.kisannetworktask.databinding.ActivityAddContactBinding;
 import com.example.kisannetworktask.pojo.ContactPojo;
 import com.example.kisannetworktask.viewModels.AddContactViewModel;
-
-import org.json.JSONObject;
 
 import java.util.List;
 
@@ -29,7 +28,7 @@ public class AddContactActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         isRetrieved=false;
-        activityAddContactBinding= DataBindingUtil.setContentView(this,R.layout.activity_add_contact);
+        activityAddContactBinding= DataBindingUtil.setContentView(this, R.layout.activity_add_contact);
 addContactViewModel= ViewModelProviders.of(this).get(AddContactViewModel.class);
 addContactViewModel.getAllContacts().observe(this, new Observer<List<ContactPojo>>() {
     @Override
