@@ -11,19 +11,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-//    packagingOptions {
-//        pickFirst 'lib/armeabi-v7a/libassmidi.so'
-//        pickFirst 'lib/x86/libassmidi.so'
-//        exclude 'META-INF/DEPENDENCIES'
-//    }
-//      repositories {
-//        mavenCentral()
-//        maven { url 'https://github.com/yongjhih/android-gradle-plugin.m2/raw/master/' }
-//    }
-//    dependencies {
-//        classpath 'com.infstory.tools.build:gradle:0.14.+'
-//    }
-//}
+
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/LICENSE'
@@ -50,17 +38,13 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'com.nexmo:client:5.2.0'
-    implementation 'com.textmagic.sdk:textmagic-java-sdk:1.2.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     def room_version = "2.2.0-rc01"
     //room
-    implementation 'com.konghq:unirest-java:3.1.02'
     implementation "com.squareup.retrofit2:retrofit:2.6.2"
     implementation "com.squareup.retrofit2:converter-gson:2.6.0"
-    implementation 'com.msg91.sendotpandroid.library:library:1.1'
     implementation 'com.googlecode.libphonenumber:libphonenumber:7.0.4'//required
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
