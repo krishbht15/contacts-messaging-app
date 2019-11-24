@@ -32,7 +32,7 @@
         android:textColor="#21274b"
         android:elevation="@dimen/dimen_10dp"
 
-        android:text="Pehla naam"
+        android:hint="Enter your First Name"
         android:fontFamily="@font/roboto_condensed_bold"
         android:paddingBottom="@dimen/dimen_8dp"
         android:paddingTop="@dimen/dimen_8dp"
@@ -65,7 +65,8 @@
         android:layout_below="@id/lastNameText"
         android:textSize="@dimen/dimen_20sp"
         android:textColor="#21274b"
-        android:text="Pehla naam"
+        android:hint="Enter your Last Name"
+
         android:elevation="@dimen/dimen_10dp"
 
         android:fontFamily="@font/roboto_condensed_bold"
@@ -122,9 +123,10 @@
         android:layout_marginTop="@dimen/dimen_8dp"
         android:layout_below="@+id/phoneText"
         android:id="@+id/phoneEditText"
+        android:maxLength="10"
         android:fontFamily="@font/roboto_condensed_bold"
         android:layout_toRightOf="@id/text91"
-        android:text="+917838238498"
+        android:hint="Ex.7838238498"
         android:paddingBottom="@dimen/dimen_8dp"
         android:paddingTop="@dimen/dimen_8dp"
         android:paddingLeft="@dimen/dimen_8dp"
@@ -135,6 +137,18 @@
         android:textColor="#21274b"
         android:background="@drawable/common_edit_text"
         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/circular_std_medium_family"
+        android:textSize="@dimen/dimen_16sp"
+        android:text="Clear Details"
+        android:layout_below="@+id/phoneEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:textColor="@color/color15335d"
+        android:id="@+id/clearDetails"/>
 
     <Button
         android:layout_width="wrap_content"

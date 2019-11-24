@@ -35,7 +35,6 @@ addContactViewModel.getAllContacts().observe(this, new Observer<List<ContactPojo
     @Override
     public void onChanged(List<ContactPojo> contactPojos) {
 
-        Toast.makeText(AddContactActivity.this, "Chande", Toast.LENGTH_SHORT).show();
         for (int i = 0; i <contactPojos.size() ; i++) {
             Log.d(TAG, "onChanged: "+contactPojos.get(i).getContact());
         }
@@ -49,12 +48,26 @@ addContactViewModel.getAllContacts().observe(this, new Observer<List<ContactPojo
                 String firstName=activityAddContactBinding.firstNameEditText.getText().toString();
             String lastName=activityAddContactBinding.lastNameEditText.getText().toString();
             String phone=activityAddContactBinding.phoneEditText.getText().toString();
-            ContactPojo contactPojo=new ContactPojo(firstName,lastName,phone);
+            if(firstName.length()>0 && lastName.length()>0 && isNumberRight(phone)) {
+                ContactPojo contactPojo = new ContactPojo(firstName, lastName, phone);
                 Intent data = new Intent();
-             data.putExtra(Constants.CONTACT_POJO,contactPojo);
+                data.putExtra(Constants.CONTACT_POJO, contactPojo);
 
                 setResult(RESULT_OK, data);
                 finish();
+            }
+            else if(firstName.length()==0 || lastName.length()==0 || phone.length()==0){
+                Toast.makeText(AddContactActivity.this, "Please Fill All Details", Toast.LENGTH_SHORT).show();
+
+            }
+            else if(!isNumberRight(phone)){
+                Toast.makeText(AddContactActivity.this, "Enter Correct Phone Number", Toast.LENGTH_SHORT).show();
+
+            }
+            else {
+
+                Toast.makeText(AddContactActivity.this, "Details are Wrong", Toast.LENGTH_SHORT).show();
+            }
 //            addContactViewModel.insert(contactPojo);
 //                finish();
 
@@ -62,12 +75,18 @@ addContactViewModel.getAllContacts().observe(this, new Observer<List<ContactPojo
 
             }
         });
-        activityAddContactBinding.cancelButton.setOnClickListener(new View.OnClickListener() {
+        activityAddContactBinding.clearDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 activityAddContactBinding.firstNameEditText.setText("");
                 activityAddContactBinding.lastNameEditText.setText("");
                 activityAddContactBinding.phoneEditText.setText("");
+            }
+        });
+        activityAddContactBinding.cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+   finish();
 
             }
         });

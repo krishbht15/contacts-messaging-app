@@ -21,6 +21,7 @@ import com.example.kisannetworktask.AddContactActivity;
 import com.example.kisannetworktask.R;
 import com.example.kisannetworktask.adapters.ContactsCommonAdapter;
 import com.example.kisannetworktask.pojo.ContactPojo;
+import com.example.kisannetworktask.pojo.SentSmsPojo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,7 @@ public class PlaceholderFragment extends Fragment {
 
     private PageViewModel pageViewModel;
     private List<ContactPojo> list;
+    private List<SentSmsPojo> sentSmsPojoList;
     private LinearLayoutManager linearLayoutManager;
     private RecyclerView allContacts;
     private ContactsCommonAdapter contactsCommonAdapter;
@@ -53,7 +55,7 @@ public class PlaceholderFragment extends Fragment {
         int index = 1;
         linearLayoutManager=new LinearLayoutManager(getContext());
         list=new ArrayList<>();
-        contactsCommonAdapter=new ContactsCommonAdapter(list,1);
+        sentSmsPojoList=new ArrayList<>();
         if (getArguments() != null) {
             index = getArguments().getInt(ARG_SECTION_NUMBER);
         }
@@ -65,13 +67,11 @@ public class PlaceholderFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         final View root = inflater.inflate(R.layout.fragment_main, container, false);
-        final TextView textView = root.findViewById(R.id.section_label);
         allContacts=root.findViewById(R.id.commonRecyclerView);
 
        addContact= root.findViewById(R.id.addContactButton);
        allContacts=root.findViewById(R.id.commonRecyclerView);
-       allContacts.setLayoutManager(linearLayoutManager);
-       allContacts.setAdapter(contactsCommonAdapter);
+
         addContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,21 +91,36 @@ if(contactPojos.size()>list.size()){
 }
             }
         });
+        pageViewModel.getSentList().observe(this, new Observer<List<SentSmsPojo>>() {
+            @Override
+            public void onChanged(List<SentSmsPojo> sentSmsPojos) {
+                if(sentSmsPojos.size()>sentSmsPojoList.size()){
+                    for (int i = sentSmsPojoList.size(); i <sentSmsPojos.size() ; i++) {
+                        sentSmsPojoList.add(sentSmsPojos.get(i));
+                    }
+                    contactsCommonAdapter.notifyDataSetChanged();
+                }
+            }
+        });
         pageViewModel.getmIndex().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
-                    if(integer==2){
+                if(integer==1){
+                    contactsCommonAdapter=new ContactsCommonAdapter(list,null,1);
+                    allContacts.setLayoutManager(linearLayoutManager);
+                    allContacts.setAdapter(contactsCommonAdapter);
 
+                }
+                else   if(integer==2){
+                        contactsCommonAdapter=new ContactsCommonAdapter(null,sentSmsPojoList,2);
+
+                        allContacts.setLayoutManager(linearLayoutManager);
+                        allContacts.setAdapter(contactsCommonAdapter);
                         addContact.setVisibility(View.GONE);
                     }
             }
         });
-        pageViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }

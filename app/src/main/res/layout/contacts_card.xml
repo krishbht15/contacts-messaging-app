@@ -8,9 +8,15 @@ android:background="@drawable/contact_common_background"
     >
 
     <TextView
+        android:layout_marginTop="@dimen/dimen_16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="First Name"
+        android:layout_marginLeft="@dimen/dimen_40dp"
+        android:textStyle="italic"
+        android:fontFamily="@font/circular_std_medium_family"
+        android:textColor="#000"
+        android:textSize="@dimen/dimen_16sp"
         android:id="@+id/firstNameText"
         />
 
@@ -18,6 +24,11 @@ android:background="@drawable/contact_common_background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="First Name"
+        android:layout_marginLeft="@dimen/dimen_40dp"
+
+        android:fontFamily="@font/circular_std_medium_family"
+        android:textColor="@color/color15335d"
+        android:textSize="@dimen/dimen_24sp"
         android:id="@+id/firstNameTextAnswer"
 
        android:layout_below="@id/firstNameText" />
@@ -26,7 +37,14 @@ android:background="@drawable/contact_common_background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Last Name"
-        android:layout_marginRight="200dp"
+        android:textStyle="italic"
+        android:layout_marginTop="@dimen/dimen_16dp"
+
+        android:fontFamily="@font/circular_std_medium_family"
+        android:textColor="#000"
+        android:textSize="@dimen/dimen_16sp"
+
+        android:layout_marginRight="@dimen/dimen_80dp"
         android:layout_alignParentRight="true"
         android:id="@+id/lastNameText"
         />
@@ -35,8 +53,10 @@ android:background="@drawable/contact_common_background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Last Name"
-        android:layout_marginRight="200dp"
-
+        android:layout_marginRight="@dimen/dimen_80dp"
+        android:fontFamily="@font/circular_std_medium_family"
+        android:textColor="@color/color15335d"
+        android:textSize="@dimen/dimen_24sp"
         android:id="@+id/lastNameTextAnswer"
 android:layout_alignParentRight="true"
         android:layout_below="@id/lastNameText" />
@@ -46,6 +66,11 @@ android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+917838238498"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dimen_16dp"
+        android:fontFamily="@font/circular_std_medium_family"
+        android:textColor="@color/color15335d"
+        android:textSize="@dimen/dimen_24sp"
         android:id="@+id/contactNumber"
         android:layout_below="@id/firstNameTextAnswer"/>
 
@@ -53,6 +78,8 @@ android:layout_alignParentRight="true"
     android:layout_width="@dimen/dimen_40dp"
     android:layout_height="@dimen/dimen_40dp"
     android:id="@+id/msgSent"
+    android:layout_marginTop="@dimen/dimen_16dp"
+    android:layout_marginRight="@dimen/dimen_8dp"
     android:layout_alignParentRight="true"
     android:src="@drawable/ic_msg_sent"/>
 

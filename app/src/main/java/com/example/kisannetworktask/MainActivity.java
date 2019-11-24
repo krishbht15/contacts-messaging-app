@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.kisannetworktask.pojo.ContactPojo;
+import com.example.kisannetworktask.pojo.SentSmsPojo;
 import com.example.kisannetworktask.viewModels.MainActivityViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -25,6 +26,7 @@ import com.example.kisannetworktask.ui.main.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
     private static final int ADD_NOTE_REQUEST = 1;
+    public static final int  ADD_CONTACT_SENT=2;
     private static final String TAG = "MainActivity";
     private MainActivityViewModel mainActivityViewModel;
     @Override
@@ -49,9 +51,13 @@ public class MainActivity extends AppCompatActivity {
             ContactPojo contactPojo= (ContactPojo) data.getSerializableExtra(Constants.CONTACT_POJO);
             mainActivityViewModel.insert(contactPojo);
 
-            Toast.makeText(this, "Note saved", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Note not saved", Toast.LENGTH_SHORT).show();
-        }
+            Toast.makeText(this, "Contact Added", Toast.LENGTH_SHORT).show();
+        } if (requestCode == ADD_CONTACT_SENT && resultCode == RESULT_OK) {
+            SentSmsPojo sentSmsPojo= (SentSmsPojo) data.getSerializableExtra(Constants.SENT_CONTACT);
+            mainActivityViewModel.inserSent(sentSmsPojo);
+            Toast.makeText(this, "Message Sent", Toast.LENGTH_SHORT).show();
+              }
+
+
     }
 }

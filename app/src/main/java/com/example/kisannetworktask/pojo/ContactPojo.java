@@ -9,13 +9,13 @@ import java.io.Serializable;
 @Entity(tableName = "contacts")
 public class ContactPojo implements Serializable {
 
-    @NonNull
-    @PrimaryKey
+
 
     private String firstName;
 
     private String lastName;
-
+    @NonNull
+    @PrimaryKey
     private String contact;
 
     public String getLastName() {

@@ -1,5 +1,6 @@
 package com.example.kisannetworktask.adapters;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,19 +15,20 @@ import com.example.kisannetworktask.Constants;
 import com.example.kisannetworktask.OtpSendActivity;
 import com.example.kisannetworktask.R;
 import com.example.kisannetworktask.pojo.ContactPojo;
+import com.example.kisannetworktask.pojo.SentSmsPojo;
 
 import java.util.List;
 
 public class ContactsCommonAdapter extends RecyclerView.Adapter<ContactsCommonAdapter.ContactsViewHolder> {
         List<ContactPojo> contacts;
+        List<SentSmsPojo> sent;
         private int checkWhichClass=-1;
 
-    public ContactsCommonAdapter(List<ContactPojo> contacts,int c) {
+    public ContactsCommonAdapter(List<ContactPojo> contacts, List<SentSmsPojo> sent, int checkWhichClass) {
         this.contacts = contacts;
-        this.checkWhichClass=c;
-
+        this.sent = sent;
+        this.checkWhichClass = checkWhichClass;
     }
-
 
     @NonNull
     @Override
@@ -38,24 +40,36 @@ public class ContactsCommonAdapter extends RecyclerView.Adapter<ContactsCommonAd
 
     @Override
     public void onBindViewHolder(@NonNull final ContactsViewHolder holder, final int position) {
-        holder.first.setText(contacts.get(position).getFirstName());
-        holder.last.setText(contacts.get(position).getLastName());
-        holder.contact.setText(contacts.get(position).getContact());
-        holder.view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(checkWhichClass==1){
-                    Intent intent=new Intent(holder.view.getContext(), OtpSendActivity.class);
-                    intent.putExtra(Constants.CONTACT_POJO,contacts.get(position));
-                    holder.view.getContext().startActivity(intent);
-                }
-            }
-        });
+       if(checkWhichClass==1) {
+           holder.first.setText(contacts.get(position).getFirstName());
+           holder.last.setText(contacts.get(position).getLastName());
+           holder.msgSent.setVisibility(View.GONE);
+
+           holder.contact.setText(contacts.get(position).getContact());
+           holder.view.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   if (checkWhichClass == 1) {
+                       Intent intent = new Intent(holder.view.getContext(), OtpSendActivity.class);
+                       intent.putExtra(Constants.CONTACT_POJO, contacts.get(position));
+                       ((Activity)  holder.view.getContext()).startActivityForResult(intent,2);
+                   }
+               }
+           });
+       }else if(checkWhichClass==2){
+           holder.first.setText(sent.get(position).getFirstName());
+           holder.last.setText(sent.get(position).getLastName());
+           holder.msgSent.setVisibility(View.VISIBLE);
+           holder.contact.setText(sent.get(position).getContact());
+       }
 
     }
 
     @Override
     public int getItemCount() {
+        if(checkWhichClass==2){
+            return sent.size();
+        }
         return contacts.size();
     }
 
