@@ -5,4 +5,14 @@
 	<dimen name="dimen_8dp">6.8dp</dimen>
 	<dimen name="appbar_padding">13.6dp</dimen>
 	<dimen name="appbar_padding_top">6.8dp</dimen>
+	<dimen name="dimen_200dp">170dp</dimen>
+	<dimen name="dimen_16dp">13.6dp</dimen>
+	<dimen name="dimen_24dp">20.4dp</dimen>
+	<dimen name="dimen_12dp">10.2dp</dimen>
+	<dimen name="dimen_10dp">8.5dp</dimen>
+	<dimen name="dimen_40dp">34dp</dimen>
+	<dimen name="dimen_80dp">68dp</dimen>
+	<dimen name="dimen_24sp">20.4sp</dimen>
+	<dimen name="dimen_20sp">17sp</dimen>
+	<dimen name="dimen_16sp">13.6sp</dimen>
 </resources>
